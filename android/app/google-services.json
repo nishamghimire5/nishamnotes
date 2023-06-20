@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691214977057",
+    "project_id": "nishamnotes-88afe",
+    "storage_bucket": "nishamnotes-88afe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691214977057:android:a53e2b279c809a56a03b60",
+        "android_client_info": {
+          "package_name": "np.com.nishamghimire.nishamnotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691214977057-ubjcnshbs6op39ohae4but7sjg70dg6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU6g435ElTYZvOWOGFtGeS46-xVXWGWtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691214977057-ubjcnshbs6op39ohae4but7sjg70dg6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
