@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nishamnotes/views/login_views.dart';
+import 'package:nishamnotes/views/register_views.dart';
 
 import 'firebase_options.dart';
 
@@ -16,6 +17,10 @@ void main() {
         useMaterial3: true,
       ),
       home: const HomePage(),
+      routes: {
+        '/login/': (context) => const LoginView(),
+        '/register/': (context) => const RegisterView(),
+      },
     ),
   );
 }
@@ -25,29 +30,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
+    return FutureBuilder(
+      future: Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
       ),
-      body: FutureBuilder(
-        future: Firebase.initializeApp(
-          options: DefaultFirebaseOptions.currentPlatform,
-        ),
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.done:
-              // final user = FirebaseAuth.instance.currentUser;
-              // if (user?.emailVerified ?? false) {
-              //   return const Text('Done!');
-              // } else {
-              //   return const VerifyEmailView();
-              // }
-              return const LoginView();
-            default:
-              return const Text("Loading...");
-          }
-        },
-      ),
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.done:
+            // final user = FirebaseAuth.instance.currentUser;
+            // if (user?.emailVerified ?? false) {
+            //   return const Text('Done!');
+            // } else {
+            //   return const VerifyEmailView();
+            // }
+            return const LoginView();
+          default:
+            return const CircularProgressIndicator();
+        }
+      },
     );
   }
 }
@@ -62,17 +62,22 @@ class VerifyEmailView extends StatefulWidget {
 class _VerifyEmailViewState extends State<VerifyEmailView> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text("Please verify your email"),
-        ElevatedButton(
-          onPressed: () async {
-            final user = FirebaseAuth.instance.currentUser;
-            await user?.sendEmailVerification();
-          },
-          child: const Text("Send Email verification"),
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Verify Email"),
+      ),
+      body: Column(
+        children: [
+          const Text("Please verify your email"),
+          ElevatedButton(
+            onPressed: () async {
+              final user = FirebaseAuth.instance.currentUser;
+              await user?.sendEmailVerification();
+            },
+            child: const Text("Send Email verification"),
+          )
+        ],
+      ),
     );
   }
 }
