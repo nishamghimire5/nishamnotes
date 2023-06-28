@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:nishamnotes/constants/routes.dart';
 import 'package:nishamnotes/views/login_views.dart';
 import 'package:nishamnotes/views/register_views.dart';
-import 'dart:developer' as devtools show log;
+// import 'dart:developer' as devtools show log;
 import 'firebase_options.dart';
 
 void main() {
