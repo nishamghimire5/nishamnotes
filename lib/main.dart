@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:nishamnotes/constants/routes.dart';
 import 'package:nishamnotes/views/login_views.dart';
 import 'package:nishamnotes/views/register_views.dart';
+import 'package:nishamnotes/views/verify_email_view.dart';
 // import 'dart:developer' as devtools show log;
 import 'firebase_options.dart';
 
@@ -22,6 +23,7 @@ void main() {
         loginRoute: (context) => const LoginView(),
         registerRoute: (context) => const RegisterView(),
         notesRoute: (context) => const NotesView(),
+        verifyEmailRoute: (context) => const VerifyEmailView(),
       },
     ),
   );
