@@ -2,6 +2,8 @@ import 'package:nishamnotes/constants/services/auth/auth_user.dart';
 
 /// An abstract class that defines the interface for authentication providers.
 abstract class AuthProvider {
+  Future<void> initialize();
+
   /// Returns the currently logged in user, or null if there is no logged in user.
   AuthUser? get currentUser;
 
