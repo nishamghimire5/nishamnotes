@@ -6,7 +6,7 @@ import 'package:nishamnotes/views/notes_view.dart';
 import 'package:nishamnotes/views/register_views.dart';
 import 'package:nishamnotes/views/verify_email_view.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(

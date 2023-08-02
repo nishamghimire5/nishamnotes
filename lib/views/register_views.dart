@@ -102,7 +102,7 @@ class _RegisterViewState extends State<RegisterView> {
               );
             },
             child: const Text("Already registered? Login here"),
-          )
+          ),
         ],
       ),
     );
